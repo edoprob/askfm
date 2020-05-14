@@ -1,0 +1,20 @@
+<%- include('partials/header.ejs') %>
+<%- include('partials/navbar.ejs') %>
+<div class="container">
+    <hr>
+    <a href="/ask"><button class="btn btn-danger">Fazer nova pergunta</button></a>
+    <br><br>
+
+    <% asks.forEach(function(temp){ %>       
+        <div class="card">
+            <div class="card-header">
+                <h3><%= temp.title %></h3>
+            </div>
+            <div class="card-body">
+                <a href="/view/<%= temp.id %>"><button class="btn btn-primary">Responder</button></a>
+            </div>
+        </div>
+        <hr>
+    <% }) %>
+</div>
+<%- include('partials/footer.ejs') %>
